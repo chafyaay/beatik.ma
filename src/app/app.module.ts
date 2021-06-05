@@ -4,10 +4,40 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ProductReviewComponent } from './pages/product-review/product-review.component';
+import { AddReviewComponent } from './components/add-review/add-review.component';
+import { ActionBarComponent } from './shared/action-bar/action-bar.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'product/:id', component: HomeComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'home', component: HomeComponent }
+];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    HomeComponent,
+    ProductDetailsComponent,
+    CartComponent,
+    ProductReviewComponent,
+    AddReviewComponent,
+    ActionBarComponent,
+    CheckoutComponent,
+    LoginComponent
+  ],
+  bootstrap: [AppComponent],
+  providers: []
 })
-export class AppModule { }
+export class AppModule {}
