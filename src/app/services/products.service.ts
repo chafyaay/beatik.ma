@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 import { Product } from '../product';
 
 @Injectable()
 export class ProductsService {
-  DATA: Product[] = [
+  DATA: Observable<Product[]> = of([
     {
       id: 0,
       category: 'cos',
@@ -25,9 +27,9 @@ export class ProductsService {
       ],
       discount: 20,
       reviews: [
-        { author: 'yassine', nbrStar: 4, comment: 'good' },
-        { author: 'fouad', nbrStar: 6, comment: 'best' },
-        { author: 'radi', nbrStar: 2, comment: 'not bad' }
+        { author: 'yassine', nbrStars: 4, comment: 'good' },
+        { author: 'fouad', nbrStars: 5, comment: 'best' },
+        { author: 'radi', nbrStars: 2, comment: 'not bad' }
       ]
     },
     {
@@ -51,9 +53,9 @@ export class ProductsService {
       ],
       discount: 10,
       reviews: [
-        { author: 'yassine', nbrStar: 4, comment: 'good' },
-        { author: 'fouad', nbrStar: 6, comment: 'best' },
-        { author: 'radi', nbrStar: 2, comment: 'not bad' }
+        { author: 'yassine', nbrStars: 4, comment: 'good' },
+        { author: 'fouad', nbrStars: 6, comment: 'best' },
+        { author: 'radi', nbrStars: 2, comment: 'not bad' }
       ]
     },
     {
@@ -78,9 +80,9 @@ export class ProductsService {
       ],
       discount: 90,
       reviews: [
-        { author: 'yassine', nbrStar: 4, comment: 'good' },
-        { author: 'fouad', nbrStar: 6, comment: 'best' },
-        { author: 'radi', nbrStar: 2, comment: 'not bad' }
+        { author: 'yassine', nbrStars: 4, comment: 'good' },
+        { author: 'fouad', nbrStars: 6, comment: 'best' },
+        { author: 'radi', nbrStars: 2, comment: 'not bad' }
       ]
     },
     {
@@ -104,12 +106,17 @@ export class ProductsService {
       ],
       discount: 20,
       reviews: [
-        { author: 'yassine', nbrStar: 4, comment: 'good' },
-        { author: 'fouad', nbrStar: 6, comment: 'best' },
-        { author: 'radi', nbrStar: 2, comment: 'not bad' }
+        { author: 'yassine', nbrStars: 4, comment: 'good' },
+        { author: 'fouad', nbrStars: 5, comment: 'best' },
+        { author: 'radi', nbrStars: 2, comment: 'not bad' }
       ]
     }
-  ];
+  ]);
   constructor() {}
-  getProductById(id) {}
+  getProductById(id: any) {
+    // return this.DATA.pipe(filter(item=>item.filter(_item=>_item.id===id)))
+  }
+  getAllProducts() {
+    return this.DATA.pipe(map(item => item));
+  }
 }

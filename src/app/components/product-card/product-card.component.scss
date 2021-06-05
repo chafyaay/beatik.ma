@@ -1,0 +1,18 @@
+.card-container {
+  padding: 17px;
+  &.card-1 {
+    display: flex;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .prd-image {
+    width: 100px;
+    height: 100px;
+    border-width: 1px;
+    border-color: lightblue;
+    border-style: solid;
+    background-size: cover;
+    margin: 0 10px;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="card-container" [ngClass]="{'card-1':!vertical}">
+  <div class="prd-image" [style.background-image]="'url(' +  product.images[0] + ')'">
+  </div>
+  <div>
+    <div class="title">{{product.brand}}, {{product.pname}}</div>
+    <app-star-review [reviews]="product.reviews"></app-star-review>
+    <div class="price">{{product.price}} DHS</div>
+    <div class="on-stock">
+      <div [ngSwitch]="product.stock">
+        <span [ngSwitchCase]="1">En Stock</span>
+        <span [ngSwitchCase]="2">Epuisé</span>
+
+      </div>
+
+    </div>
+    <button (click)="addTocart()">Achetez</button>
+  </div>
+
+</div>

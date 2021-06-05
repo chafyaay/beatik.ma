@@ -13,6 +13,9 @@ import { ActionBarComponent } from './shared/action-bar/action-bar.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductsService } from './services/products.service';
+import { StarReviewComponent } from './shared/star-review/star-review.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -35,9 +38,11 @@ const routes: Routes = [
     AddReviewComponent,
     ActionBarComponent,
     CheckoutComponent,
-    LoginComponent
+    LoginComponent,
+    ProductCardComponent,
+    StarReviewComponent
   ],
   bootstrap: [AppComponent],
-  providers: []
+  providers: [ProductsService]
 })
 export class AppModule {}
