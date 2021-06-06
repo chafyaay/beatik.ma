@@ -1,5 +1,11 @@
 .card-container {
-  padding: 17px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(235, 235, 233);
+  margin: 1rem 0;
+  border-radius: 5px;
+  border-bottom-width: 3px;
+  padding: 0.5rem 0;
   &.card-1 {
     display: flex;
   }
