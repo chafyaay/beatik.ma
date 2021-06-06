@@ -20,7 +20,7 @@ export class ProductsService {
 <li>Package Quantity: 110 Count</li>
 <li>Dimensions: 2.5 x 3.8 x 1.8 in, 0.27 lbsSwitch to Metric units</li></ul>`,
       price: 105,
-      stock: 6,
+      stock: 0,
       images: [
         'https://s3.images-iherb.com/cen/cen22713/l/29.jpg',
         'https://s3.images-iherb.com/cen/cen22713/l/35.jpg'

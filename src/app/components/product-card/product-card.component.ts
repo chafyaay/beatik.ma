@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../product';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -10,9 +11,18 @@ export class ProductCardComponent implements OnInit {
   @Input() product: Product;
   @Input() vertical: boolean;
 
-  constructor() {}
+  constructor(private cartservice: CartService) {}
 
   ngOnInit() {}
 
-  addTocart() {}
+  getDiscountedPrice() {
+    if (this.product.discount > 0)
+      return (
+        this.product.price - (this.product.price * this.product.discount) / 100
+      );
+  }
+
+  addTocart() {
+    this.cartservice.addItem(this.product);
+  }
 }

@@ -9,5 +9,11 @@ export class Product {
   images: string[];
   discount: number;
   reviews: any[];
+  promotion?: PromoI;
   constructor() {}
+}
+export interface PromoI {
+  newArrival: boolean;
+  selectedForYou: boolean;
+  promotion: boolean;
 }

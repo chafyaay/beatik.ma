@@ -14,5 +14,27 @@
     border-style: solid;
     background-size: cover;
     margin: 0 10px;
+    .prommo {
+      background: rgba(255, 99, 71, 0.822);
+      padding: 2px;
+    }
+  }
+  .stock {
+    &.in {
+      color: green;
+    }
+    &.out {
+      color: tomato;
+    }
+  }
+  .price {
+    &.discounted {
+      display: flex;
+      .old {
+        text-decoration: line-through;
+      }
+      .new {
+      }
+    }
   }
 }

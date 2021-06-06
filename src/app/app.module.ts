@@ -16,6 +16,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductsService } from './services/products.service';
 import { StarReviewComponent } from './shared/star-review/star-review.component';
+import { CartService } from './services/cart.service';
+import { NotificationComponent } from './shared/notification/notification.component';
+import { NotificationService } from './services/notification.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -40,9 +43,10 @@ const routes: Routes = [
     CheckoutComponent,
     LoginComponent,
     ProductCardComponent,
-    StarReviewComponent
+    StarReviewComponent,
+    NotificationComponent
   ],
   bootstrap: [AppComponent],
-  providers: [ProductsService]
+  providers: [ProductsService, CartService, NotificationService]
 })
 export class AppModule {}

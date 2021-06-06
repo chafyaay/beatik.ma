@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Cart } from '../../cart';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { CartService } from '../../services/cart.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-action-bar',
@@ -7,8 +8,28 @@ import { Cart } from '../../cart';
   styleUrls: ['./action-bar.component.scss']
 })
 export class ActionBarComponent implements OnInit {
-  @Input() cart: Cart;
-  constructor() {}
+  nbrItems: any;
+  constructor(
+    private cartservice: CartService,
+    private notificationService: NotificationService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.initCart();
+  }
+  initCart() {
+    this.cartservice.getCurrentCartItem().subscribe(
+      data => {
+        this.nbrItems = data;
+        this.notificationService.showNotifAlert({ success: true, show: true });
+      },
+      err => {
+        this.notificationService.showNotifAlert({ success: true, show: true });
+      }
+    );
+  }
+  clear() {
+    localStorage.clear();
+    console.clear();
+  }
 }

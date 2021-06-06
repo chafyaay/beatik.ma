@@ -1,0 +1,15 @@
+<ng-container [ngSwitch]="showNotifApp.msgType">
+  <ng-template [ngSwitchCase]="'success'">
+    <div [ngClass]="showNotifApp.success?'success':'fail'">MESSAGE</div>
+  </ng-template>
+  <ng-template>
+    message 2
+  </ng-template>
+  <ng-template>
+    message 3
+  </ng-template>
+  <ng-template>
+    message 4
+  </ng-template>
+</ng-container>
+<!-- {success: true, show: false} -->

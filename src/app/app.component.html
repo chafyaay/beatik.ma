@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<div class="beatik-app">
+  <app-notification class="app-notification" [ngClass]="showNotifApp.show?'show':'hide'" [showNotifApp]="showNotifApp">
+  </app-notification>
+  <router-outlet></router-outlet>
+</div>
