@@ -9,17 +9,21 @@
     <app-star-review [reviews]="product.reviews"></app-star-review>
 
     <div class="price" [ngClass]="{'discounted':product.discount}">
-      <div class="new" *ngIf="product.discount">{{getDiscountedPrice()}}</div>
-      <div class="old"> / {{product.price}} DHS</div>
+      <div class="new" *ngIf="product.discount">{{getDiscountedPrice()}} DHS</div>
+      <span style="margin:0 .2rem">/</span>
+      <div class="old"> {{product.price}} DHS</div>
     </div>
 
     <div class="stock" [ngSwitch]="product.stock>0" [ngClass]="product.stock>0?'in':'out'">
       <ng-template [ngSwitchCase]="true">En Stock</ng-template>
       <ng-template [ngSwitchCase]="false">Epuisé</ng-template>
     </div>
+    <div class="footer">
+      <button class="btn primary" [disabled]="product.stock<=0" (click)="addTocart()">Achetez</button>
+      <button class="btn secondary details" [disabled]="product.stock<=0" (click)="addTocart()">Plus de details</button>
+    </div>
 
 
-    <button class="btn primary" [disabled]="product.stock<=0" (click)="addTocart()">Achetez</button>
   </div>
 
 </div>

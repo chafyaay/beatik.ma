@@ -10,7 +10,8 @@
     display: flex;
   }
   .title {
-    font-size: 16px;
+    font-size: 14px;
+    margin-bottom: 0.7rem;
   }
   .prd-image {
     width: 100px;
@@ -22,10 +23,16 @@
     margin: 0 10px;
     .prommo {
       background: rgba(255, 99, 71, 0.822);
-      padding: 2px;
+      color: white;
+      width: 80%;
+      font-size: 14px;
+      padding: 5px;
     }
   }
   .stock {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 1rem;
     &.in {
       color: green;
     }
@@ -34,6 +41,7 @@
     }
   }
   .price {
+    margin: 0.21rem 0 0 0;
     &.discounted {
       display: flex;
       .old {
@@ -41,6 +49,13 @@
       }
       .new {
       }
+    }
+  }
+  .footer {
+    display: flex;
+    .details {
+      flex-grow: 1;
+      margin: 0 1rem;
     }
   }
 }

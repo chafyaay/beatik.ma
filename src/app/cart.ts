@@ -49,7 +49,6 @@ export class Cart {
   setNbrItems() {
     this.nbrItems = 0;
     const items = this.getItems();
-    console.log(items);
     if (items.length)
       items.map(item => {
         console.log(item);

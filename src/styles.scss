@@ -6,7 +6,23 @@
 }
 
 .btn {
+  width: 100px;
+  border-width: 0;
+  color: white;
+  font-size: 15px;
+  border-radius: 3px;
+  height: 40px;
   &.primary {
     background: tomato;
+  }
+  &:disabled {
+    background-color: rgb(187, 182, 182);
+  }
+  &.secondary {
+    border-width: 2px;
+    border-color: tomato;
+    color: tomato;
+    border-style: solid;
+    background: transparent;
   }
 }

@@ -21,10 +21,10 @@ export class ActionBarComponent implements OnInit {
     this.cartservice.getCurrentCartItem().subscribe(
       data => {
         this.nbrItems = data;
-        this.notificationService.showNotifAlert({ success: true, show: true });
+        this.notificationService.showNotifAlert('update-cart');
       },
       err => {
-        this.notificationService.showNotifAlert({ success: true, show: true });
+        this.notificationService.showNotifAlert('update-cart');
       }
     );
   }
