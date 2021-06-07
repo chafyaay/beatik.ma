@@ -1,3 +1,3 @@
-<p>
-cart works!
-</p>
+<div *ngFor="let product of products">
+  <app-product-card [product]="product" [typeOfType]="'cart'"></app-product-card>
+</div>

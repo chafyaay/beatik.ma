@@ -2,7 +2,7 @@
   <ng-template [ngSwitchCase]="'update-cart'">
     <div class="message-container" [ngClass]="showNotifApp.success?'success':'fail'">
       <label class="message-title">Article ahouté au panier</label>
-      <button class="btn primary">Panier</button>
+      <button class="btn primary" (click)="goTocart()">Panier</button>
     </div>
 
   </ng-template>

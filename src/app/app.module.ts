@@ -19,12 +19,13 @@ import { StarReviewComponent } from './shared/star-review/star-review.component'
 import { CartService } from './services/cart.service';
 import { NotificationComponent } from './shared/notification/notification.component';
 import { NotificationService } from './services/notification.service';
+import { RouterService } from './services/router.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'product/:id', component: HomeComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart-details', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'home', component: HomeComponent }
 ];
@@ -47,6 +48,6 @@ const routes: Routes = [
     NotificationComponent
   ],
   bootstrap: [AppComponent],
-  providers: [ProductsService, CartService, NotificationService]
+  providers: [ProductsService, CartService, NotificationService, RouterService]
 })
 export class AppModule {}

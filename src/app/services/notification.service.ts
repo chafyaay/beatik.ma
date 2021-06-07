@@ -8,10 +8,18 @@ export class NotificationService {
   showNotifSubjet = this.notifSubject.asObservable();
   constructor() {}
 
-  showNotifAlert(msgType: any) {
-    this.notifSubject.next({ success: true, show: true, msgType: msgType });
+  showNotifAlert(obj: any) {
+    this.notifSubject.next({
+      success: obj.success,
+      show: true,
+      msgType: obj.msgType
+    });
     setTimeout(() => {
-      this.notifSubject.next({ success: false, show: false, msgType: msgType });
+      this.notifSubject.next({
+        success: obj.success,
+        show: false,
+        msgType: obj.msgType
+      });
     }, 10000);
   }
 }

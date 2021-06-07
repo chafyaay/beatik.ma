@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, observable } from 'rxjs';
 import { Cart } from '../cart';
 import { Product } from '../product';
+import { NotificationService } from './notification.service';
 
 @Injectable()
 export class CartService {
@@ -14,7 +15,7 @@ export class CartService {
   cartNbrItemsSubject = new BehaviorSubject<number>(this.cartNbrItems);
   currentCartNbrItems = this.cartNbrItemsSubject.asObservable();
 
-  constructor() {}
+  constructor(private notifService: NotificationService) {}
 
   addItem(item: Product) {
     this.cart = new Cart(item);

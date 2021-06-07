@@ -114,7 +114,11 @@ export class ProductsService {
   ]);
   constructor() {}
   getProductById(id: any) {
-    // return this.DATA.pipe(filter(item=>item.filter(_item=>_item.id===id)))
+    return this.DATA.pipe(
+      map(item => {
+        return item.find(item => item.id === id);
+      })
+    );
   }
   getAllProducts() {
     return this.DATA.pipe(map(item => item));

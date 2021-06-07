@@ -1,4 +1,15 @@
-<div class="card-container" [ngClass]="{'card-1':!vertical}">
+<div class="card-container" [ngSwitch]="typeOfType">
+  <ng-container *ngSwitchCase="'home'">
+    <ng-template *ngTemplateOutlet="card; context: {implicit:'hello' }"></ng-template>
+  </ng-container>
+  <ng-container *ngSwitchCase="'cart'">
+    <ng-template *ngTemplateOutlet="card; context: 'jjj'"></ng-template>
+  </ng-container>
+</div>
+
+
+<ng-template #card let-context="eee">
+  --- {{context}}
   <div class="prd-image" [style.background-image]="'url(' +  product.images[0] + ')'">
     <div class="prommo" *ngIf="product.discount">
       {{product.discount}} % Off
@@ -22,8 +33,5 @@
       <button class="btn primary" [disabled]="product.stock<=0" (click)="addTocart()">Achetez</button>
       <button class="btn secondary details" [disabled]="product.stock<=0" (click)="addTocart()">Plus de details</button>
     </div>
-
-
   </div>
-
-</div>
+</ng-template>
