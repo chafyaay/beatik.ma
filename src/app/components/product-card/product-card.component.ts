@@ -18,8 +18,8 @@ export class ProductCardComponent implements OnInit {
 
   constructor(
     private cartservice: CartService,
-    private router: RouterService,
-    ) {}
+    private router: RouterService
+  ) {}
 
   ngOnInit() {
     console.log(this.product.id);
@@ -38,7 +38,7 @@ export class ProductCardComponent implements OnInit {
     this.cartservice.addItem(this.product);
   }
 
-  moreDetails(id:any){
-    this.router.goToUrl(`/product-details/${id}`)
+  moreDetails(id: any) {
+    this.router.goToUrl(`/product-details/${id}`);
   }
 }

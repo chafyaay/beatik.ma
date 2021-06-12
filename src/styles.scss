@@ -26,3 +26,12 @@
     background: transparent;
   }
 }
+
+.flex {
+  display: flex;
+  &.space-between {
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center;
+  }
+}

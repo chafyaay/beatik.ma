@@ -20,7 +20,7 @@ import { CartService } from './services/cart.service';
 import { NotificationComponent } from './shared/notification/notification.component';
 import { NotificationService } from './services/notification.service';
 import { RouterService } from './services/router.service';
-import { AddItemComponent } from './shared/add-item/add-item.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
