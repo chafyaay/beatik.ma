@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRouter:ActivatedRouter) { }
 
   ngOnInit() {
+    this.activatedRouter.
   }
 
 }
